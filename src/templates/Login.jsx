@@ -1,19 +1,19 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { push } from 'connected-react-router';
-import { signInAction } from '../reducks/users/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { signIn } from '../reducks/users/operations';
 
 const Login = () => {
-  const dispatch = useDispatch();
-  
+  const dispatch = useDispatch()
+  const selector = useSelector(state => state);
+  console.log(selector);
+
   return (
     <div>
       <h2>Log in</h2>
       <button
         onClick={() => {
-          dispatch(signInAction({ uid: '0001', username: 'tarahack' }));
-          // render is not working : NEED TO FIX
-          dispatch(push('/'));
+          dispatch(signIn);
+          console.log(selector);
         }}
       >
         Log in
