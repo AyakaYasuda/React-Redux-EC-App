@@ -12,7 +12,7 @@ const Login = () => {
       <h2>Log in</h2>
       <button
         onClick={() => {
-          dispatch(signIn);
+          dispatch(signIn());
           console.log(selector);
         }}
       >

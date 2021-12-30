@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import createStore from './reducks/store/store';
-// import { ConnectedRouter } from 'connected-react-router';
-import Router from './Router';
+import { ConnectedRouter } from 'connected-react-router';
+// import Router from './Router';
 import * as History from 'history';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -13,9 +13,11 @@ export const store = createStore(history);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    {/* <Router history={history}> */}
+    <ConnectedRouter history={history}>
       <App />
-    </Router>
+    </ConnectedRouter>
+    {/* </Router> */}
   </Provider>,
   document.getElementById('root')
 );
